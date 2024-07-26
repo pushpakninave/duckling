@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+Nodes :
+Setting up:
+1. creating project - > npx create-next-app@latest
+2. Next.js uses a file-system based router where folders are used to define routes.
+
+
+ENCOUNTERED ERRORS:
+Error: (0 , react__WEBPACK_IMPORTED_MODULE_0__.createContext) is not a function
+This error happened while generating the page. Any console logs will be displayed in the terminal window.
