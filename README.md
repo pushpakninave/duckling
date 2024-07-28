@@ -45,3 +45,5 @@ Setting up:
 ENCOUNTERED ERRORS:
 Error: (0 , react__WEBPACK_IMPORTED_MODULE_0__.createContext) is not a function
 This error happened while generating the page. Any console logs will be displayed in the terminal window.
+
+new packages ->  npm i @t3-oss/env-nextjs for env
