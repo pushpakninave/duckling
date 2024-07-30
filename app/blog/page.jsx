@@ -47,7 +47,6 @@ const Services = async () => {
                           <MobileBlogCard key={index} postInfo={node.node} />
                         </div>
                       </div>
-
                     )
                   }
                 )
