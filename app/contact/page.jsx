@@ -35,11 +35,11 @@ const info = [
   }
 ]
 const Contact = () => {
-  const serviceId = env.NEXT_PUBLIC_EMAIL_SERVICE_ID
-  const templateId = env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
+  const serviceId = env.EMAIL_SERVICE_ID
+  const templateId = env.EMAIL_TEMPLATE_ID
 
   useEffect(() => {
-    emailjs.init(env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
+    emailjs.init(env.EMAIL_PUBLIC_KEY);
   }, []);
 
   const { toast } = useToast()
