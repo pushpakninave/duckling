@@ -39,7 +39,7 @@ const Services = async () => {
                 postsArray.map(
                   (node, index) => {
                     return (
-                      <div>
+                      <div key={index}>
                         <div className="hidden xl:block">
                           <BlogCard key={index} postInfo={node.node} />
                         </div>
