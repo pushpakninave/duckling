@@ -42,7 +42,9 @@ function BlogCard({ postInfo }) {
                             <p className='blogViews mt-2 text-xs flex flex-row items-center group-hover:text-cyan-500 '>{postInfo.views}<FaRegEye className='mx-2' /></p>
                             <div className='text-sm bg-slate-900 mt-6 p-5 border-l-2 border-b-2 rounded-sm shadow-custom-navy border-accent transform transition-transform duration-700 ease-out group-hover:scale-105'>
                                 <p className=''>{truncateText(postInfo.brief, 150)}</p>
-                                <Tags tagInfo={totalTags} />
+                                <div className="mt-5">
+                                    <Tags tagInfo={totalTags} />
+                                </div>
                                 <Link href={postInfo.url} target='_blank' className='items-center text-accent/50 text-base hover:text-accent hover:transition-all hover:scale-105 duration-500'>
                                     <FaExternalLinkSquareAlt className='m-2 text-2xl' />
                                 </Link>

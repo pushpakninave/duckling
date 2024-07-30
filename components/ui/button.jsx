@@ -14,9 +14,9 @@ const buttonVariants = cva(
         outline: "border border-cyan-500 bg-transparent text-accent hover:bg-cyan-800"
       },
       size: {
-        default: "h-[44px] px-6",
-        sm: "h-[48px] px-6",
-        lg: "h-[56px] px-8 text-sm uppercase tracking-[2px]",
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },
     },

@@ -4,11 +4,11 @@ const truncateTag = (text, maxLength) => {
 };
 function Tags({ tagInfo }) {
     return (
-        <div className="text-white/100 flex flex-row justify-end cursor-pointer mt-5">
+        <div className="text-white/100 flex flex-row justify-end cursor-pointer">
             {tagInfo.slice(0, 3).map((tag, index) => (
-                truncateTag(tag.slug, 9) && (
+                truncateTag(tag.slug || tag.topic.name, 9) && (
                     <p key={index} className="text-xs/5 px-2 mx-1 bg-accent/60 border-accent rounded-xl ">
-                        {tag.slug}
+                        {tag.slug || tag.topic.name}
                     </p>
                 )
             ))}
