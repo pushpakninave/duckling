@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 
 const Services = async () => {
 
-  const title = await getBlogName();
   const posts = await getPosts();
   let postsArray = posts.posts;
 

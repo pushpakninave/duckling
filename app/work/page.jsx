@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 import dateFormat from 'dateformat';
 
 const Work = async () => {
+  console.log(process.env.NEXT_PUBLIC_GITHUB_TOKEN);
   const repoInfo = await getGitRepos();
   return (
     <div className="container mx-auto h-full">
