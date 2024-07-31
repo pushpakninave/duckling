@@ -5,7 +5,6 @@ import Tags from "./Tags";
 import { FaExternalLinkAlt, FaForward } from "react-icons/fa";
 
 const GitTable = ({ repositoriesInfo }) => {
-    console.log(repositoriesInfo);
     return (
         <motion.div
             initial={{ opacity: 0 }}

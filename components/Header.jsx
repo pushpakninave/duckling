@@ -14,7 +14,6 @@ import {
 
 const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <header className="py-8 xl:py12 text-white">
       <div className="container mx-auto flex justify-between items-center">
@@ -57,7 +56,7 @@ const Header = () => {
         </div>
 
         {/* mobile nav */}
-        <div className="xl:hidden"><MobileNav /></div>
+        <div className="xl:hidden"><MobileNav/></div>
       </div>
     </header>
   )

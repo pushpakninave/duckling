@@ -34,8 +34,8 @@ const info = [
   }
 ]
 const Contact = () => {
-  const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
-  const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
+  const serviceId = process.env.EMAIL_SERVICE_ID
+  const templateId = process.env.EMAIL_TEMPLATE_ID
 
   useEffect(() => {
     emailjs.init('ES09lozmJonkL-3et');
