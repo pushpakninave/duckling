@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useEffect } from "react";
-import { env } from "/lib/env.js";
 import { useToast } from "@/components/ui/use-toast"
 
 const info = [
