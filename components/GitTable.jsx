@@ -35,7 +35,7 @@ const GitTable = ({ repositoriesInfo }) => {
                                         <TableCell>{repo.name}</TableCell>
                                         <TableCell className="hidden xl:table-cell">{<Tags tagInfo={repo.repositoryTopics.nodes} />}</TableCell>
                                         <TableCell className="hidden lg:table-cell xl:table-cell">{repo.description}</TableCell>
-                                        <TableCell className="flex justify-end cursor-pointer hover:scale-105 transition-transform duration-300"> <FaExternalLinkAlt href={repo.url}/> </TableCell>
+                                        <TableCell className="flex justify-end cursor-pointer hover:scale-105 transition-transform duration-300"><a href={repo.url} target="_blank"> <FaExternalLinkAlt/> </a></TableCell>
                                     </TableRow>
                                 </TableBody>
                             )
