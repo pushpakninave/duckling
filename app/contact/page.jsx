@@ -113,6 +113,8 @@ const Contact = () => {
       message: formData.message,
     };
 
+    console.log("logging service and template id ---> ", serviceId, templateId);
+
     emailjs.send(serviceId, templateId, templateParamsToSend)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
