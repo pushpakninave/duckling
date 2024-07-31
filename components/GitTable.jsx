@@ -31,7 +31,8 @@ const GitTable = ({ repositoriesInfo }) => {
                         sortedRepos.map((repo, index) => {
                             return (
                                 <TableBody key={index}>
-                                    <TableRow>
+                                    {repo.visibility === 'PUBLIC' && 
+                                        <TableRow>
                                         <TableCell className="font-medium">{new Date(repo.updatedAt).getFullYear()}</TableCell>
                                         <TableCell>{repo.name}</TableCell>
                                         <TableCell className="hidden xl:table-cell">
@@ -46,6 +47,7 @@ const GitTable = ({ repositoriesInfo }) => {
                                             </a>
                                         </TableCell>
                                     </TableRow>
+                                    }
                                 </TableBody>
                             );
                         })
