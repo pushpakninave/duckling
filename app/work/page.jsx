@@ -1,4 +1,3 @@
-'use client'
 
 import GitTable from "@/components/GitTable";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

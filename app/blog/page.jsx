@@ -1,4 +1,3 @@
-'use client'
 
 import BlogCard from "@/components/BlogCard";
 import Hr from "@/components/Hr";
