@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster"
+import Head from 'next/head';
+import Analytics from "./Analytics";
 
 const JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -20,11 +22,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={JetBrainsMono.variable}>
-        <Header/>
+        {/* for user footprints i have used google analytics.*/}
+        <Analytics/>
+        <Header />
         {/* <StairTransition></StairTransition> */}
         <PageTransition>{children}</PageTransition>
         <Toaster />
-        </body>
+      </body>
     </html>
   );
 }
