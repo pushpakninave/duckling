@@ -1,7 +1,8 @@
 
 'use client'
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
+import { useRef } from "react";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaAngular, FaJava, FaArrowRight, FaArrowAltCircleRight, FaCaretRight } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiSpringboot, SiGraphql, SiPostman, SiLaravel, SiGithub, SiDocker } from "react-icons/si";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ScrollBar } from "@/components/ui/scroll-area";
@@ -10,6 +11,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TabsContent } from "@radix-ui/react-tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import classNames from 'classnames';
+import Photo from "@/components/Photo"
+import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport, } from "@/components/ui/navigation-menu"
 
 // about data
 const about = {
@@ -148,6 +151,17 @@ const skills = {
   ]
 }
 const Resume = () => {
+  const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+  const educationRef = useRef(null);
+  const skillsRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <motion.div
@@ -156,22 +170,22 @@ const Resume = () => {
           opacity: 1,
           transition: { delay: 1.5, duration: 0.8, ease: "easeIn" }
         }}
-        className="min-h-[80v] flex items-center justify-center py-12 xl:py-6"
+        className="min-h-[80v] flex items-center justify-center py-12 xl:py-6  order-1"
       >
         <div className="container mx-auto">
-          <Tabs defaultValue="experience"
+          <Tabs defaultValue="about"
             className="flex flex-col xl:flex-row gap-[60px]">
+            {/* content menu */}
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-              <TabsTrigger value="experience">Experience</TabsTrigger>
-              <TabsTrigger value="education">Education</TabsTrigger>
-              <TabsTrigger value="skills">Skills</TabsTrigger>
-              <TabsTrigger value="about">About me</TabsTrigger>
+              <TabsTrigger value="about" onClick={() => scrollToSection(aboutRef)}>About me</TabsTrigger>
+              <TabsTrigger value="experience" onClick={() => scrollToSection(experienceRef)}>Experience</TabsTrigger>
+              <TabsTrigger value="education" onClick={() => scrollToSection(educationRef)}>Education</TabsTrigger>
+              <TabsTrigger value="skills" onClick={() => scrollToSection(skillsRef)}>Skills</TabsTrigger>
             </TabsList>
-
             {/* content */}
             <div className="min-h-[70vh] w-full">
               <TabsContent value="experience" className="w-full">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <div ref={experienceRef} id="experience" className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{experience.title}</h3>
                   <p className="max-w[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
                   <ScrollArea className="h-[250px]" >
@@ -194,7 +208,7 @@ const Resume = () => {
                 </div>
               </TabsContent>
               <TabsContent value="education" className="w-full">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <div ref={educationRef} id="education" className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{education.title}</h3>
                   <p className="max-w[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
                   <ScrollArea className="h-[250px]" >
@@ -217,7 +231,7 @@ const Resume = () => {
                 </div>
               </TabsContent>
               <TabsContent value="skills" className="w-full h-full">
-                <div className="flex flex-col gap-[30px]">
+                <div ref={skillsRef} id="skills" className="flex flex-col gap-[30px]">
                   <div className="flex flex-col gap-[30px] text-center xl:text-left">
                     <h3 className="text-4xl font-bold">{skills.title}</h3>
                     <p className="">{skills.description}</p>
@@ -259,22 +273,26 @@ const Resume = () => {
                 </div>
               </TabsContent>
               <TabsContent value="about" className="w-full text-center xl:text-left">
-                    <div className="flex flex-col gap-[30px]">
-                      <h3 className="text-4xl font-bold">{about.title}</h3>
-                      <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                      <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                        {
-                          about.info.map((item, index)=>{
-                            return(
-                              <li key={index} className="flex items-center justify-items-center xl:justify-start gap-4">
-                                <span className="text-white/60">{item.fieldName}</span>
-                                <span>{item.fieldValue}</span>
-                              </li>
-                            )
-                          })
-                        }
-                      </ul>
-                    </div>
+                <div ref={aboutRef} id="about" className="flex flex-col gap-[30px]">
+                  <h3 className="text-4xl font-bold">{about.title}</h3>
+                  {/* photo */}
+                  <div className="mb-8 xl:mb-0">
+                    <Photo />
+                  </div>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                    {
+                      about.info.map((item, index) => {
+                        return (
+                          <li key={index} className="flex items-center justify-items-center xl:justify-start gap-4">
+                            <span className="text-white/60">{item.fieldName}</span>
+                            <span>{item.fieldValue}</span>
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+                </div>
               </TabsContent>
             </div>
           </Tabs>

@@ -14,8 +14,7 @@ const Work = async () => {
     <div className="container mx-auto h-full">
       <HoverCard openDelay={2}>
         <HoverCardTrigger asChild>
-          
-          <Button variant="link">
+          <Button variant="link" className="px-0">
             <div className="text-accent flex flex-row justify-between items-center max-w-[200px] mb-[10px]">
               <Avatar className="h-9 w-9 mr-[12px]">
                 <AvatarImage src={repoInfo.viewer.avatarUrl} />

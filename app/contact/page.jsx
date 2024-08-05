@@ -169,7 +169,7 @@ const Contact = () => {
                   placeholder="Phone no." />
               </div>
               <Textarea
-                className="h-[200px]"
+                className="h-[100px]"
                 placeholder="Type your message here."
                 value={formData.firstname ? formData.message : ''}
                 onChange={handleTextareaChange}

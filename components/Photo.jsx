@@ -15,14 +15,14 @@ function Photo() {
                 }}
                 className="relative"
             >
-                <div className="w-[298px] h-[298px] xl:w-[380px] xl:h-[380px]">
+                <div className="w-[200px] h-[200px] md:w-[298px] md:h-[298px] xl:w-[280px] xl:h-[280px]">
                     <Image src="/assets/images/profile_image.png" priority quality={100} fill alt='profile picture' className='object-contain rounded-full overflow-hidden'
                     />
                 </div>
             </motion.div>
 
             {/* circle */}
-            <motion.svg className="w-[318px] h-[318px] xl:w-[400px] xl:h-[400px] absolute"
+            <motion.svg className="w-[220px] h-[220px] md:w-[318px] md:h-[318px] xl:w-[300px] xl:h-[300px] absolute"
                 initial={{ opacity: 0 }}
                 animate={{
                     opacity: 1,

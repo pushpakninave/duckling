@@ -13,7 +13,7 @@ const GitTable = ({ repositoriesInfo }) => {
                 opacity: 1,
                 transition: { delay: 1.5, duration: 0.8, ease: "easeIn" }
             }}
-            className="min-h-[80v] flex items-center justify-center py-12 xl:py-6"
+            className="min-h-[80v] flex items-center justify-center xl:py-6"
         >
             <div>
                 <Table>
