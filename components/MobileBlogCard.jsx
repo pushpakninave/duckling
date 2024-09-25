@@ -24,7 +24,7 @@ function MobileBlogCard({ postInfo }) {
         >       
             <Card className="py-10 px-5 relative bg-transparent bg-slate-900 rounded-xl shadow-custom-navy mb-2 mx-5 md:mx-10 lg:mx-20 overflow-hidden transform transition-transform duration-400 ease-out hover:scale-105">
                     <Image
-                        src={postInfo.coverImage.url}
+                        src={postInfo.coverImage.url ? postInfo.coverImage.url : "/assets/images/undraw_post_ahef.svg"}
                         width={400}
                         height={400}
                         className="absolute inset-0 h-full w-full object-cover opacity-55"

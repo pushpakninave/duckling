@@ -31,7 +31,7 @@ function BlogCard({ postInfo }) {
                 <div className='container mx-auto h-full flex justify-center'>
                     <div className='blogskeleton cursor-pointer mx-10 w-full flex xl:flex-row items-center justify-between xl:pt-8 xl:mb-7 relative group'>
                         <div className='blogimage order-1 xl:order-none mb-8 xl:mb-0 relative '>
-                            <Image className=' rounded-md' src={postInfo.coverImage.url} width={500} height={400} priority alt={postInfo.title} />
+                            <Image className='rounded-md' src={ postInfo.coverImage.url ? postInfo.coverImage.url : "/assets/images/undraw_post_ahef.svg" } width={500} height={400} priority alt={postInfo.title} />
                             <div className='absolute inset-0 bg-slate-600 bg-opacity-50 hover:bg-opacity-0 hover:cursor-pointer transition-opacity duration-1000 ease-in group-hover:opacity-0'></div>
                         </div>
                         <div className='bloginfo text-center xl:text-left order-2 xl:order-none absolute left-[30%] w-[70%] inset-0 flex flex-col justify-center items-end bg-opacity-50 p-5 z-10'>
