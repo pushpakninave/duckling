@@ -1,4 +1,5 @@
 'use client'
+
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { motion } from "framer-motion";
 import Tags from "./Tags";
@@ -11,7 +12,7 @@ const GitTable = ({ repositoriesInfo }) => {
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 1,
-                transition: { delay: 1.5, duration: 0.8, ease: "easeIn" }
+                transition: { delay: 0.5, duration: 0.8, ease: "easeIn" }
             }}
             className="min-h-[80v] flex items-center justify-center xl:py-6"
         >
@@ -31,22 +32,22 @@ const GitTable = ({ repositoriesInfo }) => {
                         sortedRepos.map((repo, index) => {
                             return (
                                 <TableBody key={index}>
-                                    {repo.visibility === 'PUBLIC' && 
+                                    {repo.visibility === 'PUBLIC' &&
                                         <TableRow>
-                                        <TableCell className="font-medium">{new Date(repo.updatedAt).getFullYear()}</TableCell>
-                                        <TableCell>{repo.name}</TableCell>
-                                        <TableCell className="hidden xl:table-cell">
-                                            <Tags tagInfo={repo.repositoryTopics.nodes} />
-                                        </TableCell>
-                                        <TableCell className="hidden lg:table-cell xl:table-cell">
-                                            {repo.description}
-                                        </TableCell>
-                                        <TableCell className="flex justify-end cursor-pointer hover:scale-105 transition-transform duration-300">
-                                            <a href={repo.url} target="_blank">
-                                                <FaExternalLinkAlt />
-                                            </a>
-                                        </TableCell>
-                                    </TableRow>
+                                            <TableCell className="font-medium">{new Date(repo.updatedAt).getFullYear()}</TableCell>
+                                            <TableCell>{repo.name}</TableCell>
+                                            <TableCell className="hidden xl:table-cell">
+                                                <Tags tagInfo={repo.repositoryTopics.nodes} />
+                                            </TableCell>
+                                            <TableCell className="hidden lg:table-cell xl:table-cell">
+                                                {repo.description}
+                                            </TableCell>
+                                            <TableCell className="flex justify-end cursor-pointer hover:scale-105 transition-transform duration-300">
+                                                <a href={repo.url} target="_blank">
+                                                    <FaExternalLinkAlt />
+                                                </a>
+                                            </TableCell>
+                                        </TableRow>
                                     }
                                 </TableBody>
                             );

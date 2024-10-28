@@ -19,15 +19,15 @@ module.exports = {
       lg: '960px',
       xl: '1200px',
     },
-    fontFamily:{
+    fontFamily: {
       primary: "var(--font-jetbrainsMono)"
     },
     extend: {
-      colors:{
+      colors: {
         primary: "#1c1c22",
-        accent:{
-          DEFAULT:"#00ff99",
-          hover:"00e187"
+        accent: {
+          DEFAULT: "#00ff99",
+          hover: "00e187"
         }
       },
       boxShadow: {
@@ -46,12 +46,17 @@ module.exports = {
           '0%': { width: '10px' },
           '100%': { width: '100px' },
         },
+        glow: {
+          '0%': { color: '#00ff00' },  // Bright green
+          '50%': { color: '#007700' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "grow": "grow 0.5s forwards",
         expandWidth: 'expandWidth 2s ease-in-out',
+        glow: 'glow 10s infinite alternate',
       },
     },
   },
