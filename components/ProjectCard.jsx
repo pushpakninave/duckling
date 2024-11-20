@@ -33,6 +33,7 @@ function ProjectCard({ projectInfo, index }) {
 
                 </div>
                 <div className='projectInfo absolute left-[10%] md:left-[30%] w-[50%] group-hover:scale-[1.07] transition ease-in bg-slate-900 duration-150 p-5 shadow-lg'>
+                    <p className='font-bold underline text-accent pb-2'>{projectInfo.projectName}</p>
                     <p className='text-xs'>{projectInfo.description}</p>
                     <div className='flex flex-row justify-end'>
                         <Link href={projectInfo.githubLink} target='_blank' className='items-center text-accent/50 text-base hover:text-accent hover:transition-all  duration-500'>

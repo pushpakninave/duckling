@@ -7,6 +7,13 @@ const projects = [
         imageUrl: "/assets/images/devcommit.png",
     },
     {
+        projectName: "Terminal-Note-App",
+        description: "Developing CLIs and TUIs in Go is fun. There is an amazing library called Bubble Tea to build beautiful interactive TUIs. In this I built a terminal-based note taking app using Bubble Tea and some other libraries.",
+        githubLink: "https://github.com/pushpakninave/terminallytask/tree/master",
+        liveLink: "",
+        imageUrl: "/assets/images/notesApp1.png",
+    },
+    {
         projectName: "IPL-Dashboard",
         description: "This web-based application contains data set of all the IPL-matches that were conducted between [2008-2020]. The main objective of this application is be a dedicated medium to get information about a particular match or a team.",
         githubLink: "https://github.com/pushpakninave/ipl-dashboard-using-spring-boot",
