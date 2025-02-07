@@ -25,7 +25,7 @@ export default function Home() {
             {/* <MediaEmbed/> */}
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8 mt-20">
-              <a href="/assets/dnfile/Pushpak_FResume.pdf" download="pushpakninave_resume.pdf">
+              <a href="/assets/dnfile/pushpakninave_l.pdf" download="pushpakninave_resume.pdf">
                 <Button
                   variant="outline"
                   size="lg"
